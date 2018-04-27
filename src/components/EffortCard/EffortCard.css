@@ -1,0 +1,20 @@
+.effort-card {
+  height: 75px;
+  width: 16%;
+  border: 1px solid #3d3e42;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 5px;
+  color: #00aced;
+  font-weight: 100;
+  /* box-shadow: 1px 1px 1px 1px black; */
+}
+
+.effort-card:hover {
+  /* border: 1px solid #00aced; */
+  cursor: pointer;
+  color: #ffa100;
+}

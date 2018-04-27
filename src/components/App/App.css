@@ -1,28 +1,69 @@
-.App {
+nav {
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #3d3e42;
+  position: fixed;
+  top: 0;
+  z-index: 300;
+  box-shadow: 0px 1px 1px black;
+}
+
+nav h1 {
+  font-size: 2.3em;
+  color: #00aced;
+  font-weight: 100;
+  margin-left: 15px;
+}
+
+#logo {
+  background: url('../../assets/icons/running.svg');
+  height: 35px;
+  width: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 50px;
+}
+
+footer {
+  height: 40px;
+  width: 100%;
+  background: #3d3e42;
+  margin-top: 30px;
+}
+
+#nav-spacer {
+  height: 12vh;
+  width: 100%;
+}
+
+#split {
+  display: flex;
+  height: 13vh;
+  width: 100%;
+  justify-content: center;
+}
+
+#arrow {
+  background: url('../../assets/icons/down-arrow.svg');
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-self: center;
+  margin: 0 15px;
+}
+
+.split-line {
+  height: 6.5vh;
+  width: 42%;
+  border-bottom: 1px solid #3d3e42;
+}
+
+#graph-title,
+#graph-use {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  font-weight: 100;
+  color: #3d3e42;
 }

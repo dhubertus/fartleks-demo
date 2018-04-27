@@ -1,9 +1,9 @@
-export const calcEffort = data => ({
+export const calcEffort = efforts => ({
   type: 'CALCULATE_EFFORT',
-  data,
+  efforts,
 });
 
-export const test = movies => ({
-  type: 'MOVIE_SUCCESS',
-  movies,
+export const selectData = data => ({
+  type: 'SELECT_DATA',
+  data,
 });
