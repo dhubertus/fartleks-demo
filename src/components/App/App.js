@@ -8,7 +8,7 @@ import EffortDisplay from '../EffortDisplay/EffortDisplay';
 import BestEffortsContainer from '../../containers/BestEffortsContainer';
 
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.dataApi = new HandleDataApi();
@@ -20,7 +20,6 @@ class App extends Component {
         return item;
       }
     });
-
     const twenty = this.dataApi.calculateBestEffort(cleanData, 1200, 'twenty');
     const fifteen = this.dataApi.calculateBestEffort(cleanData, 900, 'fifteen');
     const ten = this.dataApi.calculateBestEffort(cleanData, 600, 'ten');
@@ -34,7 +33,6 @@ class App extends Component {
       fifteen,
       twenty,
     };
-    console.log(bestEfforts);
 
     this.props.handleBestEfforts(bestEfforts);
   }

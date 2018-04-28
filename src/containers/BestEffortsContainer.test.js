@@ -1,24 +1,21 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { mapDispatchToProps, mapStateToProps } from './BestEffortsContainer';
 
-describe('mapStateToProps', () => {
+import { mapStateToProps, mapDispatchToProps } from './BestEffortsContainer';
+
+describe('mapStateToProps for best efforts container', () => {
   const mockStore = {
-    bestEfforts: {
-      one: {},
-      five: {},
-      ten: {},
-      fifteen: {},
-      twenty: {},
-    },
+    calcEffortReducer: 'test',
   };
 
-  const expected = mapStateToProps(mockStore);
-  console.log(expected);
-  expect(expected.bestEfforts).toEqual(mockStore.bestEfforts);
+  it('should recieve best efforts from the store', () => {
+    const expected = mapStateToProps(mockStore);
+
+    expect(expected.bestEfforts).toEqual(mockStore.calcEffortReducer);
+  });
 });
 
-describe('mapDispatchToProps', () => {
+describe('mapDispatchToProps for best efforts container', () => {
   let mockDispatch;
   let result;
 
@@ -28,7 +25,6 @@ describe('mapDispatchToProps', () => {
   });
 
   it('should call dispatch if handleBestEfforts is called', () => {
-    console.log(result);
     result.handleBestEfforts();
     expect(mockDispatch).toHaveBeenCalled();
   });

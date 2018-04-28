@@ -52,10 +52,4 @@ export default class HandleDataApi {
       return acc;
     }, []);
   }
-
-  createSelectionData(array) {
-    return array.map((dataSet) => {
-      return { row: dataSet[1], column: dataSet[0] };
-    });
-  }
 }

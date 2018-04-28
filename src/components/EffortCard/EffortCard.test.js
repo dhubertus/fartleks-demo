@@ -32,14 +32,14 @@ describe('Effort Card Tests', () => {
   });
 
   it('should render a single effort card', () => {
-    wrapper.find('.effort-card').simulate(
-      'click',
-      { preventDefault() {} },
-    );
     expect(wrapper.find('.effort-card').length).toBe(1);
   });
 
   it('should trigger this.props.handleSelectedData when clicked', () => {
+    wrapper.find('.effort-card').simulate(
+      'click',
+      { preventDefault() {} },
+    );
     expect(mockFn.mock.calls.length).toBe(1);
   });
 });

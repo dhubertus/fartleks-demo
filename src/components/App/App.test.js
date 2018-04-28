@@ -1,47 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import { shallow, mount } from 'enzyme';
-// import { Provider } from 'react-redux';
-// import BestEffortsContainer from '../../containers/BestEffortsContainer';
-import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import configureStore from 'redux-mock-store';
 
-import App from './App';
+import { App } from './App';
 
-const mockStore = configureMockStore()({
-  bestEfforts: {
-    one: [
-      [1, 2],
-      [2, 3],
-    ],
-    five: [
-      [1, 2],
-      [2, 3],
-    ],
-    ten: [
-      [1, 2],
-      [2, 3],
-    ],
-    fifteen: [
-      [1, 2],
-      [2, 3],
-    ],
-    twenty: [
-      [1, 2],
-      [2, 3],
-    ],
-  },
-  selectedData: [],
-});
+describe('Effort Display Tests', () => {
+  const middlewares = [thunk];
+  const mockStore = configureStore(middlewares);
+  const mockFn = jest.fn();
+  const initialState = {
+    selectedData: [],
+    bestEfforts: {},
+  };
+  const store = mockStore(initialState);
+  const wrapper = shallow(<App
+                            store={store}
+                            handleBestEfforts={mockFn}
+                          />);
 
-const wrapper = mount(<Provider store={mockStore}><App /></Provider>);
-const Component = wrapper.find(App);
+  it('should be defined', () => {
+    expect(wrapper).toBeDefined();
+  });
 
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 
-// Enzyme.configure({ adapter: new Adapter() });
+  it('should render a single application', () => {
+    expect(wrapper.find('.App').length).toBe(1);
+  });
+  
+  it('should render a single nav', () => {
+    expect(wrapper.find('nav').length).toBe(1);
+  });
 
-describe('App', () => {
-  it('renders without crashing', () => {
-    console.log(Component);
-    // expect(wrapper.find('.App').length).toEqual(1);
+  it('the nav should contatin a logo and a title', () => {
+    expect(wrapper.find('nav').children().find('h1').length).toBe(1);
+    expect(wrapper.find('nav').children().find('#logo').length).toBe(1);
+  });
+
+  it('should render a graph title', () => {
+    expect(wrapper.find('#graph-title').length).toBe(1);
+    expect(wrapper.find('#graph-use').length).toBe(1);
   });
 });

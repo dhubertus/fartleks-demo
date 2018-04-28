@@ -5,7 +5,7 @@ import sampleData from '../../test-data/workout-data.json';
 import HandleDataApi from '../../helpers/HandleDataApi';
 import DataSelectionContainer from '../../containers/DataSelectionContainer';
 
-class Graph extends Component {
+export class Graph extends Component {
   constructor(props) {
     super(props);
     this.api = new HandleDataApi();
@@ -17,7 +17,6 @@ class Graph extends Component {
         legend: { position: 'bottom', alignment: 'start', textStyle: { color: '#3d3e42', fontSize: 16 } },
         lineWidth: 0.4,
         selectionMode: 'multiple',
-        aggregationTarget: 'category',
         colors: ['#ffa100'],
         crosshair: { color: '#00aced', trigger: 'both', orientation: 'vertical' },
       },
@@ -42,8 +41,7 @@ class Graph extends Component {
         eventName: 'select',
         callback(Chart) {
           const selection = Chart.chart.getSelection();
-          const api = new HandleDataApi();
-          const rows = api.getAllGPSLocations(sampleData.samples);
+          const rows = superClass.api.getAllGPSLocations(sampleData.samples);
 
           if (selection.length > 1) {
             selection.sort((itemA, itemB) => {
@@ -61,6 +59,7 @@ class Graph extends Component {
 
     return (
       <Chart
+        id='graph'
         chartType="LineChart"
         rows={this.state.rows}
         columns={this.state.columns}

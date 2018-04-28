@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { selectData } from '../actions/actions';
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   selectedData: state.selectDataReducer,
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   handleSelectedData: (data) => {
     dispatch(selectData(data));
   },
