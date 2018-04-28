@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { calcEffort } from '../actions/actions';
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   bestEfforts: state.calcEffortReducer,
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   handleBestEfforts: (efforts) => {
     dispatch(calcEffort(efforts));
   },

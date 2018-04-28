@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import EffortCard from '../EffortCard/EffortCard';
 import BestEffortsContainer from '../../containers/BestEffortsContainer';
 
-class EffortDisplay extends Component {
+export class EffortDisplay extends Component {
   render() {
     const { bestEfforts } = this.props;
-    const cardArray = Object.keys(bestEfforts).map((key) => {
+    const cardArray = Object.keys(bestEfforts).map((key, i) => {
       return (
         <EffortCard
+          key={i}
           title={bestEfforts[key].title}
           bestAverage={bestEfforts[key].bestAverage}
           bestValues={bestEfforts[key].bestValues}
@@ -19,7 +20,7 @@ class EffortDisplay extends Component {
     return (
       <div id="effort-card-display">
         <div id='effort-display-title'>
-          <h4>Top Power Averages By Time</h4>
+          <h4>Your Best Efforts</h4>
         </div>
         <div id='effort-card-container'>
           {cardArray}

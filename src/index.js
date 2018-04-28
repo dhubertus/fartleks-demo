@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { browserHistory, Route } from 'react-router';
+import { Route } from 'react-router';
 import './index.css';
 
 import App from './components/App/App';
@@ -21,7 +21,7 @@ const store = createStore(
 
 render(
   <Provider store={ store }>
-    <Router history={ browserHistory }>
+    <Router>
       <App />
     </Router>
   </Provider>,

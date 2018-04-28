@@ -19,6 +19,7 @@ class Graph extends Component {
         selectionMode: 'multiple',
         aggregationTarget: 'category',
         colors: ['#ffa100'],
+        crosshair: { color: '#00aced', trigger: 'both', orientation: 'vertical' },
       },
       rows: this.api.getPowerData(sampleData.samples),
       columns: [

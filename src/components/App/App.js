@@ -34,6 +34,7 @@ class App extends Component {
       fifteen,
       twenty,
     };
+    console.log(bestEfforts);
 
     this.props.handleBestEfforts(bestEfforts);
   }
@@ -48,13 +49,13 @@ class App extends Component {
         <div id="nav-spacer"></div>
         <RouteMap />
         <div id="split">
-          <div class="split-line"></div>
+          <div className="split-line"></div>
           <div id="arrow"></div>
-          <div class="split-line"></div>
+          <div className="split-line"></div>
         </div>
         <EffortDisplay />
         <h3 id="graph-title">Power vs Time</h3>
-        <h5 id="graph-use">Select two points to trace data on map</h5>
+        <h5 id="graph-use">Select Range Of Data To Display On Map</h5>
         <Graph />
         <footer></footer>
       </div>
