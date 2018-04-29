@@ -55,6 +55,10 @@ footer {
   margin: 0 15px;
 }
 
+#arrow:hover {
+  cursor: pointer;
+}
+
 .split-line {
   height: 6.5vh;
   width: 42%;

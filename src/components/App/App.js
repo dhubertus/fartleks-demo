@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Scroll from 'react-scroll';
 import sampleData from '../../test-data/workout-data.json';
 
 import HandleDataApi from '../../helpers/HandleDataApi';
@@ -15,11 +16,7 @@ export class App extends Component {
   }
 
   componentWillMount() {
-    const cleanData = sampleData.samples.filter((item) => {
-      if ((typeof item.values.power) === 'number') {
-        return item;
-      }
-    });
+    const cleanData = this.dataApi.cleanData(sampleData);
     const twenty = this.dataApi.calculateBestEffort(cleanData, 1200, 'twenty');
     const fifteen = this.dataApi.calculateBestEffort(cleanData, 900, 'fifteen');
     const ten = this.dataApi.calculateBestEffort(cleanData, 600, 'ten');
@@ -37,6 +34,14 @@ export class App extends Component {
     this.props.handleBestEfforts(bestEfforts);
   }
 
+  scroll() {
+    Scroll.scroller.scrollTo('split', {
+      duration: 700,
+      delay: 100,
+      smooth: true,
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -48,7 +53,7 @@ export class App extends Component {
         <RouteMap />
         <div id="split">
           <div className="split-line"></div>
-          <div id="arrow"></div>
+          <div id="arrow" onClick={() => this.scroll()}></div>
           <div className="split-line"></div>
         </div>
         <EffortDisplay />

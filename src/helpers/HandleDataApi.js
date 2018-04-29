@@ -52,4 +52,12 @@ export default class HandleDataApi {
       return acc;
     }, []);
   }
+
+  cleanData(data) {
+    return data.samples.filter((item) => {
+      if (typeof item.values.power === 'number') {
+        return item;
+      }
+    });
+  }
 }
