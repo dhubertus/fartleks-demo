@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Chart } from 'react-google-charts';
+import Scroll from 'react-scroll';
 import sampleData from '../../test-data/workout-data.json';
 
 import HandleDataApi from '../../helpers/HandleDataApi';
@@ -34,6 +35,14 @@ export class Graph extends Component {
     };
   }
 
+  scroll() {
+    Scroll.scroller.scrollTo('route-map', {
+      duration: 700,
+      delay: 100,
+      smooth: true,
+    });
+  }
+
   render() {
     const superClass = this;
     const chartEvents = [
@@ -52,6 +61,7 @@ export class Graph extends Component {
 
             superClass.props.handleSelectedData(newSet);
             Chart.chart.setSelection();
+            superClass.scroll();
           }
         },
       },

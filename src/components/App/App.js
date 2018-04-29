@@ -40,7 +40,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav>
+        <nav id="page-nav">
           <div id="logo"></div>
           <h1>Fartleks</h1>
         </nav>
