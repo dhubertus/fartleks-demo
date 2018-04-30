@@ -30,7 +30,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <nav>
+        <nav
+          id="page-nav"
+>
           <div
                     id="logo"
           />
@@ -50,6 +52,7 @@ ShallowWrapper {
           />
           <div
                     id="arrow"
+                    onClick={[Function]}
           />
           <div
                     className="split-line"
@@ -86,6 +89,7 @@ ShallowWrapper {
               Fartleks
 </h1>,
           ],
+          "id": "page-nav",
         },
         "ref": null,
         "rendered": Array [
@@ -145,6 +149,7 @@ ShallowWrapper {
 />,
             <div
               id="arrow"
+              onClick={[Function]}
 />,
             <div
               className="split-line"
@@ -171,6 +176,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "id": "arrow",
+              "onClick": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -251,7 +257,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <nav>
+          <nav
+            id="page-nav"
+>
             <div
                         id="logo"
             />
@@ -271,6 +279,7 @@ ShallowWrapper {
             />
             <div
                         id="arrow"
+                        onClick={[Function]}
             />
             <div
                         className="split-line"
@@ -307,6 +316,7 @@ ShallowWrapper {
                 Fartleks
 </h1>,
             ],
+            "id": "page-nav",
           },
           "ref": null,
           "rendered": Array [
@@ -366,6 +376,7 @@ ShallowWrapper {
 />,
               <div
                 id="arrow"
+                onClick={[Function]}
 />,
               <div
                 className="split-line"
@@ -392,6 +403,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "id": "arrow",
+                "onClick": [Function],
               },
               "ref": null,
               "rendered": null,
