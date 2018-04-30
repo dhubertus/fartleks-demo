@@ -10,7 +10,7 @@ export class EffortCard extends Component {
   }
 
   scroll() {
-    Scroll.scroller.scrollTo('route-map', {
+    Scroll.scroller.scrollTo('nav-spacer', {
       duration: 700,
       delay: 100,
       smooth: true,
